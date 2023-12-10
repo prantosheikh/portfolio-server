@@ -39,17 +39,11 @@ async function run() {
          .collection("review");
 
 
-
-
-
       app.get('/reviews', async (req, res) => {
          const result = await reviewsCollection.find().toArray()
          res.send(result)
 
       })
-
-
-
 
       await client.db("admin").command({ ping: 1 });
       console.log(
@@ -60,6 +54,8 @@ async function run() {
       // await client.close();
    }
 }
+
+
 
 run().catch(console.dir);
 
